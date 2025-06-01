@@ -15,10 +15,10 @@ class BaseModel:
             created at
             updated up
         """
-        if kwargs:
-            for key, value in kwargs.items():
-                if key != "__class__":
-                    if key 
+        # if kwargs:
+        #     for key, value in kwargs.items():
+        #         if key != "__class__":
+        #             if key 
 
 
         self.id = str(uuid.uuid4())
@@ -29,7 +29,7 @@ class BaseModel:
     This returns the string representation of the object.
     """
     def __str__(self):
-        return "[{}] ({}) {}".format(self.__class__.__name, self.id,self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,self.__dict__)
     
     def save(self):
         """
