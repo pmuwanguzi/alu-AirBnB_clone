@@ -30,4 +30,17 @@ class FileStorage:
         key = "{}.{}".format(new_obj.__class__.__name__, new_obj.id)
         self.__objects[key] = new_obj
 
+    def save(self):
+        objects = {}
+        for key, obj in self.__objects.items():
+            objects[key] = obj.to_dict()
+        with open(self.__file_path, "w") as f:
+            json.dump(objects, f)
+
+    def reload(self):
+        try:
+            pass
+        except FileNotFoundError:
+            pass
+
 
